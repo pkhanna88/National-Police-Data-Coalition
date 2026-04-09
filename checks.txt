@@ -1,0 +1,60 @@
+complaints.csv: 28234 rows x 11 columns
+  complaint_id: null_values=0, unique_values=28234, sample_value=np.int64(1064037)
+  record_id: null_values=0, unique_values=28146, sample_value='202409605'
+  incident_date: null_values=473, unique_values=8666, sample_value='2024-09-20'
+  closed_date: null_values=0, unique_values=2282, sample_value='2024-11-22'
+  reason_for_contact: null_values=503, unique_values=45, sample_value='C/V at PCT to file complaint of crime'
+  outcome_of_contact: null_values=205, unique_values=17, sample_value='No arrest made or summons issued'
+  days_to_close: null_values=473, unique_values=833, sample_value=np.float64(63.0)
+  incident_month: null_values=473, unique_values=12, sample_value=np.float64(9.0)
+  incident_month_name: null_values=473, unique_values=12, sample_value='September'
+  incident_year: null_values=473, unique_values=28, sample_value=np.float64(2024.0)
+  month_sort: null_values=473, unique_values=12, sample_value='09-Sep'
+
+allegations.csv: 2423 rows x 6 columns
+  allegation_id: null_values=0, unique_values=2423, sample_value=np.int64(1064040)
+  complaint_id: null_values=0, unique_values=397, sample_value=np.int64(1064037)
+  officer_id: null_values=0, unique_values=692, sample_value='Unidentified'
+  allegation_type: null_values=0, unique_values=71, sample_value='Refusal to process civilian complaint'
+  finding: null_values=0, unique_values=20, sample_value='OMB PEG Directive Closure'
+  outcome: null_values=1598, unique_values=4, sample_value='Charges'
+
+agencies.csv: 4670 rows x 8 columns
+  agency_id: null_values=0, unique_values=4670, sample_value=np.int64(34525)
+  agency_name: null_values=0, unique_values=4670, sample_value='New York City Police Department'
+  jurisdiction: null_values=3082, unique_values=6, sample_value='MUNICIPAL'
+  hq_address: null_values=3197, unique_values=1100, sample_value='1 Police Plaza Path'
+  hq_state: null_values=324, unique_values=46, sample_value='NY'
+  website_url: null_values=1859, unique_values=2148, sample_value='https://www.nyc.gov/site/nypd/index.page'
+  final_city: null_values=329, unique_values=1732, sample_value='New York City'
+  final_state: null_values=324, unique_values=46, sample_value='NY'
+
+officer_penalties.csv: 293 rows x 5 columns
+  officer_id: null_values=0, unique_values=293, sample_value=np.int64(59508)
+  first_name: null_values=0, unique_values=216, sample_value='Dia'
+  last_name: null_values=0, unique_values=276, sample_value='Abdallah'
+  penalty: null_values=0, unique_values=10, sample_value='No penalty'
+  penalty_category: null_values=0, unique_values=5, sample_value='No penalty issued'
+
+annual_trends.csv: 865 rows x 3 columns
+  year: null_values=0, unique_values=28, sample_value=np.int64(1998)
+  reason_for_contact: null_values=0, unique_values=46, sample_value='Other'
+  complaint_count: null_values=0, unique_values=130, sample_value=np.int64(1)
+
+agency_summary.csv: 1 rows x 6 columns
+  agency_id: null_values=0, unique_values=1, sample_value=np.int64(34525)
+  agency_name: null_values=0, unique_values=1, sample_value='New York City Police Department'
+  state: null_values=0, unique_values=1, sample_value='NY'
+  total_complaints: null_values=0, unique_values=1, sample_value=np.int64(307)
+  officers_with_complaints: null_values=0, unique_values=1, sample_value=np.int64(691)
+  total_allegations: null_values=0, unique_values=1, sample_value=np.int64(4262)
+
+True -- complaints.csv: no duplicate complaint_id values
+True -- complaints.csv: no negative days_to_close values
+True -- allegations.csv: no .0 in officer_id values
+True -- allegations.csv: all complaint_id values exist within complaints
+True -- allegations.csv: no null findings
+True -- penalties.csv: no duplicate officer_id values
+True -- agencies.csv: no duplicate agency_id values
+True -- annual_trends.csv: no null values
+True -- agency_summary.csv: all agency_id value exists within agencies
